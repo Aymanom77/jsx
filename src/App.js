@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { Container, Card } from 'react-bootstrap';
+import Product from './product';
+import Name from './Name';
+import Price from './Price';
+import Description from './Description';
+import Image from './Image';
+
+const firstName = "John"; // Changez le prénom selon votre besoin
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Card style={{ width: '18rem' }}>
+        <Card.Body>
+          <Card.Title><Name /></Card.Title>
+          <Card.Text>
+            <Price />
+            <Description />
+            <Image />
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      <p>Bonjour, {firstName ? firstName : 'là'} !</p>
+      {firstName && <img src="votre_image.png" alt="Votre image" />}
+    </Container>
   );
 }
 
